@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0 15px;
+  height: 66px;
+  background-color: #34465d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.header .logo_link {
+  width: auto;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header .logo_link img {
+  width: auto;
+  height: auto;
+  margin-right: 5px;
+}

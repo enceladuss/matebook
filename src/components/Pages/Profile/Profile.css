@@ -1,0 +1,99 @@
+.profile-content-wrapper {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+}
+
+.profile-content-sidebar {
+    width: 100%;
+    max-width: 33.3%;
+}
+
+.profile-section {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ede9e9;
+    border-radius: 5px;
+}
+
+.profile-section-head {
+    position: relative;
+    width: 100%;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    color: #515365;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e6ecf5;
+    text-transform: capitalize;
+}
+
+.profile-section-head:before {
+    content: "";
+    height: 90%;
+    left: -20px;
+    position: absolute;
+    top: -5px;
+    width: 3px;
+    background-color: #fa6342;
+}
+
+.profile-section-head .h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.profile-content-main {
+    width: 100%;
+    max-width: 66.6%;
+    margin-left: 20px;    
+}
+
+.personal-info-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.personal-info-item-head {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    color: #515365;
+    margin-bottom: 5px;
+    text-transform: capitalize;    
+    display: flex;
+    align-items: center;
+}
+
+.personal-info-item-head img {
+    width: 10px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.personal-info-item-text {
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    padding-left: 20px;  
+    color: #959ab5;  
+}
+
+.personal-info-item-text p {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 20px; 
+    color: #959ab5;   
+}
+
+.profile-content-sidebar-wrapp .personal-info-item:last-child .personal-info-item-text:last-child p:last-child {
+    margin-bottom: 0;
+}
+
+
