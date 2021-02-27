@@ -6,14 +6,18 @@
 
 .profile-content-sidebar {
     width: 100%;
-    max-width: 33.3%;
+    max-width: 30%;
 }
 
-.profile-section {
-    padding: 20px;
+.profile-content-right-sidebar {
+    max-width: 20%;
+}
+
+.filled-section {
     background-color: #fff;
     border: 1px solid #ede9e9;
     border-radius: 5px;
+    padding: 20px;    
 }
 
 .profile-section-head {
@@ -49,7 +53,7 @@
 .profile-content-main {
     width: 100%;
     max-width: 66.6%;
-    margin-left: 20px;    
+    margin: 0 20px;    
 }
 
 .personal-info-item {
@@ -71,7 +75,8 @@
 }
 
 .personal-info-item-head img {
-    width: 10px;
+    width: auto;
+    max-width: 12px;
     height: auto;
     margin-right: 10px;
 }
@@ -92,8 +97,164 @@
     color: #959ab5;   
 }
 
+.personal-info-item-text a {
+    color: #fa6342;
+
+}
+
 .profile-content-sidebar-wrapp .personal-info-item:last-child .personal-info-item-text:last-child p:last-child {
     margin-bottom: 0;
 }
+
+.profile-sub-section {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ede9e9;
+    border-radius: 5px;   
+    margin-bottom: 20px;    
+}
+
+.links-widget ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.links-widget p {
+    margin: 0;
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: #959ab5;
+}
+
+.links-widget ul li {
+    margin: 2px 5px;
+}
+
+.links-widget ul li a {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #757a95;
+    transition: 0.2s all;
+}
+
+.links-widget ul li a:hover {
+    color: #fa6342;
+}
+
+.newPostForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postFormInput {
+    width: 100%;
+    display: flex;
+}
+
+.postFormInput img {
+    width: 45px;
+    min-width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.postFormInput textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    height: 80px;
+    resize: none;
+    font-size: 14px;
+}
+
+.postFormInput textarea::placeholder {
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    height: 35px;
+    background-color: #23d2e2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s all;
+}
+
+.btn:hover {
+    background-color: #fa6342;
+}
+
+
+.user-post-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-post-head img {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    margin-right: 14px;
+    border-radius: 50%;
+}
+
+.postAuthor {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.postAuthor a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fa6342;
+}
+
+.postAuthor span {
+    color: #959ab5;
+    font-size: 12px;
+}
+
+.user-post-content {
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #959ab5;
+}
+
+.user-post-content p {
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    line-height: 26px;
+    color: #959ab5;
+    font-weight: 500;  
+    margin: 0;  
+}
+
+.user-post-content img {
+    width: 100%;
+}
+ 
+
+
+
+
 
 

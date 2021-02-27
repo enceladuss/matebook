@@ -34,6 +34,7 @@ button:focus, a:focus {
 
 a {
 	text-decoration: none;
+  color: #fa6342;
 }
 
 ul {
