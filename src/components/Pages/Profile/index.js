@@ -104,7 +104,8 @@ const Profile = () => {
 
           <div className="profile-content-main profile-section">
             <UserNewPost />
-            <UserPosts />
+            <UserPosts postAuthor="Jason Borne" postText="World's most beautiful car in Curabitur! the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website  www.audiusa.com" />
+            <UserPosts postAuthor="Jason Borne" postText="Hi, how are you?" />
           </div>
 
           <aside className="profile-content-sidebar profile-content-right-sidebar profile-section">
@@ -157,7 +158,9 @@ const Profile = () => {
                     </a>
                   </li>
                 </ul>
-                <p>© MateBook 2021. <br/> All Rights Reserved.</p>
+                <p>
+                  © MateBook 2021. <br /> All Rights Reserved.
+                </p>
               </div>
             </div>
           </aside>
