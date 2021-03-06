@@ -24,6 +24,10 @@
   margin-bottom: 10px;
 }
 
+.nav_links a.active .nav_links__icon {
+  background-color: #fa6342;
+}
+
 .nav_links__icon {
   width: 40px;
   height: 40px;

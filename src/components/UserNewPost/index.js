@@ -7,7 +7,7 @@ import userImg from "./../../img/user.jpg";
 const UserNewPost = () => {
   return (
     <div className="profile-sub-section user-new-post">
-      <div className="profile-section-head">
+      <div className="section-head">
         <h3 className="h3">Create post</h3>
       </div>
       <form action="#" className="newPostForm">

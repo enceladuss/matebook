@@ -14,43 +14,6 @@
     max-width: 20%;
 }
 
-.filled-section {
-    background-color: #fff;
-    border: 1px solid #ede9e9;
-    border-radius: 5px;
-    padding: 20px;    
-}
-
-.profile-section-head {
-    position: relative;
-    width: 100%;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 15px;
-    color: #515365;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e6ecf5;
-    text-transform: capitalize;
-}
-
-.profile-section-head:before {
-    content: "";
-    height: 90%;
-    left: -20px;
-    position: absolute;
-    top: -5px;
-    width: 3px;
-    background-color: #fa6342;
-}
-
-.profile-section-head .h3 {
-    margin: 0;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 15px;
-}
-
 .profile-content-main {
     width: 100%;
     max-width: 66.6%;
