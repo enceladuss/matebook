@@ -13,8 +13,13 @@
 .messages {
     width: 100%;
     max-width: 790px;
+    padding: 0;
 }
 
+.message-head {
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
 
 .dialogs-list {
     width: 100%;
@@ -73,4 +78,93 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
+}
+
+.message-area {
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    padding: 10px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFAFA;
+}
+
+.message-area:hover {
+
+}
+
+/* width */
+.message-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.message-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.message-area::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.message-area::-webkit-scrollbar-thumb:hover {
+    background: #A2A2A2;
+}
+
+
+.interlocutor {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.user-img {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.user-img img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.me {
+    flex-direction: row-reverse;
+}
+
+.me .user-img {
+    margin-left: 5px;
+}
+
+.you .user-img {
+    margin-right: 5px;
+}
+
+.text-box {
+    max-width: 80%;
+    background-color: #DBF4FD;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 8px 7px;
+    color: #838195;
+    border-radius: 5px;
 }
