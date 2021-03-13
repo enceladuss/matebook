@@ -7,7 +7,7 @@ import Profile from "./components/Pages/Profile";
 import News from "./components/Pages/News";
 import Dialogs from "./components/Pages/Dialogs";
 import Settings from "./components/Pages/Settings";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Redirect, Route} from "react-router-dom";
 
 function App() {
     return (
@@ -15,6 +15,11 @@ function App() {
             <div className="app grid">
                 <Header/>
                 <Navigation/>
+
+                <Route exact path="/" render={() => (
+                    <Redirect to="/Profile"/>
+                )}/>
+
                 <Route path="/Profile" component={Profile}/>
                 <Route path="/News" component={News}/>
                 <Route path="/Dialogs" component={Dialogs}/>
