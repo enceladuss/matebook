@@ -3,56 +3,27 @@ import React from "react";
 import "./ProfileRightSidebar.css";
 
 const ProfileRightSidebar = () => {
+
+  const links = [
+      {id: 1, link:'#', linkText: 'about'},
+      {id: 2, link:'#', linkText: 'career'},
+      {id: 3, link:'#', linkText: 'advertise'},
+      {id: 4, link:'#', linkText: 'Apps'},
+      {id: 5, link:'#', linkText: 'Blog'},
+      {id: 6, link:'#', linkText: 'Help'},
+      {id: 7, link:'#', linkText: 'Gifts'},
+      {id: 8, link:'#', linkText: 'content policy'},
+      {id: 9, link:'#', linkText: 'User Policy'},
+  ]
+
+  const linksElements = links.map( e  => <li><a href={e.link}>{e.linkText}</a></li>)
+
   return (
       <aside className="profile-content-sidebar profile-content-right-sidebar profile-section">
         <div className="profile-content-sidebar-wrapp">
           <div className="profile-sub-section links-widget">
             <ul>
-              <li>
-                <a href="#" title="">
-                  about
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  career
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  advertise
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  Apps
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  Help
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  Gifts
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  content policy
-                </a>
-              </li>
-              <li>
-                <a href="#" title="">
-                  User Policy
-                </a>
-              </li>
+              {linksElements}
             </ul>
             <p>
               © MateBook 2021. <br /> All Rights Reserved.

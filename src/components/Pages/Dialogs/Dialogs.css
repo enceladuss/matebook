@@ -31,11 +31,15 @@
     width: 100%;
     padding: 12px 15px;
 }
-
-
-.dialog-item.active, .dialog-item:hover {
+.dialog-item:hover {
     background: rgba(0,0,0,.05);
 }
+
+.dialog-item.active {
+    background: rgba(0,0,0,.15);
+    cursor: default;
+}
+
 
 .dialog-head {
     display: flex;

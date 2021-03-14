@@ -9,7 +9,36 @@ import briefCaseImg from "../../img/icons/briefcase.svg";
 import envelopeImg from "../../img/icons/envelope.svg";
 import handShakeImg from "../../img/icons/handshake.svg";
 
+const PersonalInfoItem = (props) => {
+    return (
+        <div className="personal-info-item">
+            <div className="personal-info-item-head">
+                <img src={props.itemIcon} alt="user"/>
+                {props.itemHead}
+            </div>
+
+            <div className="personal-info-item-text">
+                <p>
+                    {props.itemText}
+                </p>
+            </div>
+        </div>
+    )
+}
+
 const ProfileLeftSidebar = () => {
+
+    const personalInfoData = [
+        {id: 1,itemIcon: userImg,itemHead: 'About Me:', itemText: 'Hi, I’m John Carter, I’m 36 and I work as a Digital Designer for the “dewwater” Agency in Ontario, Canada.' },
+        {id: 2,itemIcon: birthdayCakeImg,itemHead: 'Birthday:', itemText: 'December 17, 1985' },
+        {id: 3,itemIcon: globeImg,itemHead: 'Country:', itemText: 'San Francisco, California, USA' },
+        {id: 4,itemIcon: briefCaseImg,itemHead: 'Occupation:', itemText: 'UI/UX Designer' },
+        {id: 5,itemIcon: envelopeImg,itemHead: 'Email & Website:', itemText: 'jackc85@gmail.com' },
+        {id: 6,itemIcon: handShakeImg,itemHead: 'Joined:', itemText: 'December 20, 2021' },
+    ]
+
+    const personalInfoElements = personalInfoData.map( (e) => <PersonalInfoItem itemIcon={e.itemIcon} itemHead={e.itemHead} itemText={e.itemText} /> )
+
     return (
         <aside className="profile-content-sidebar profile-section filled-section">
             <div className="profile-content-sidebar-wrapp">
@@ -17,79 +46,8 @@ const ProfileLeftSidebar = () => {
                     <h3 className="h3">Personal Info</h3>
                 </div>
 
-                <div className="personal-info-item">
-                    <div className="personal-info-item-head">
-                        <img src={userImg} alt="user"/>
-                        About Me:
-                    </div>
+                {personalInfoElements}
 
-                    <div className="personal-info-item-text">
-                        <p>
-                            Hi, I’m John Carter, I’m 36 and I work as a Digital Designer
-                            for the “dewwater” Agency in Ontario, Canada.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="personal-info-item">
-                    <div className="personal-info-item-head">
-                        <img src={birthdayCakeImg} alt="user"/>
-                        Birthday:
-                    </div>
-
-                    <div className="personal-info-item-text">
-                        <p>December 17, 1985</p>
-                    </div>
-                </div>
-
-                <div className="personal-info-item">
-                    <div className="personal-info-item-head">
-                        <img src={globeImg} alt="user"/>
-                        Country:
-                    </div>
-
-                    <div className="personal-info-item-text">
-                        <p>San Francisco, California, USA</p>
-                    </div>
-                </div>
-
-                <div className="personal-info-item">
-                    <div className="personal-info-item-head">
-                        <img src={briefCaseImg} alt="user"/>
-                        Occupation:
-                    </div>
-
-                    <div className="personal-info-item-text">
-                        <p>UI/UX Designer</p>
-                    </div>
-                </div>
-
-                <div className="personal-info-item">
-                    <div className="personal-info-item-head">
-                        <img src={envelopeImg} alt="user"/>
-                        Email & Website:
-                    </div>
-
-                    <div className="personal-info-item-text">
-                        <p>
-                            jackc85@gmail.com{" "}
-                            <a href="https://www.artstation.com/jackcarter">
-                                www.artstation.com
-                            </a>
-                        </p>
-                    </div>
-                </div>
-
-                <div className="personal-info-item">
-                    <div className="personal-info-item-head">
-                        <img src={handShakeImg} alt="user"/>
-                        Joined:
-                    </div>
-
-                    <div className="personal-info-item-text">
-                        <p>December 20, 2021</p>
-                    </div>
-                </div>
             </div>
         </aside>
     );
