@@ -3,10 +3,10 @@ import "./App.css";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
-import Profile from "./components/Pages/Profile";
-import News from "./components/Pages/News";
-import Dialogs from "./components/Pages/Dialogs";
-import Settings from "./components/Pages/Settings";
+import Profile from "./components/Profile";
+import News from "./components/News";
+import Dialogs from "./components/Dialogs";
+import Settings from './components/Settings';
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
 
 function App() {

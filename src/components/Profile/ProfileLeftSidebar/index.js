@@ -2,29 +2,14 @@ import React from "react";
 
 import "./ProfileLeftSidebar.css";
 
-import userImg from "./../../img/icons/user.svg";
-import birthdayCakeImg from "../../img/icons/birthday-cake.svg";
-import globeImg from "../../img/icons/globe.svg";
-import briefCaseImg from "../../img/icons/briefcase.svg";
-import envelopeImg from "../../img/icons/envelope.svg";
-import handShakeImg from "../../img/icons/handshake.svg";
+import userImg from "./../../../img/icons/user.svg";
+import birthdayCakeImg from "../../../img/icons/birthday-cake.svg";
+import globeImg from "../../../img/icons/globe.svg";
+import briefCaseImg from "../../../img/icons/briefcase.svg";
+import envelopeImg from "../../../img/icons/envelope.svg";
+import handShakeImg from "../../../img/icons/handshake.svg";
 
-const PersonalInfoItem = (props) => {
-    return (
-        <div className="personal-info-item">
-            <div className="personal-info-item-head">
-                <img src={props.itemIcon} alt="user"/>
-                {props.itemHead}
-            </div>
-
-            <div className="personal-info-item-text">
-                <p>
-                    {props.itemText}
-                </p>
-            </div>
-        </div>
-    )
-}
+import PersonalInfoItem from "../PersonalInfoItem";
 
 const ProfileLeftSidebar = () => {
 

@@ -1,15 +1,14 @@
 import React from "react";
 
-import userImg from "./../../img/user.jpg";
+import userImg from "../../../img/user.jpg";
 
-import c from "./HeaderLogin.module.css";
-
+import "./HeaderLogin.css";
 
 const HeaderLogin = () => {
   return (
-    <div className={`${c.login_wrapp}`}>
+    <div className="login_wrapp">
       <span>Jack Carter</span>
-      <div className={`${c.user_img__wrapp}`}>
+      <div className="user_img__wrapp">
         <img src={userImg} alt="" />
       </div>
     </div>

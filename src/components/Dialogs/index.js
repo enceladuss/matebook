@@ -2,39 +2,10 @@ import React from "react";
 
 import "./Dialogs.css";
 
-import userImg from "./../../../img/user.jpg";
-import {NavLink} from "react-router-dom";
+import userImg from "./../../img/user.jpg";
 
-const DialogItem = (props) => {
-
-    return (
-        <NavLink className="dialog-item" to={`/dialogs/${props.dialogId}`}>
-            <div className="dialog-head">
-                <div className="dialog-head-image">
-                    <img src={props.userAvatar} alt=""/>
-                </div>
-
-                <div className="dialog-info">
-                    <div className="user-name">{props.userName}</div>
-                </div>
-            </div>
-        </NavLink>
-    )
-}
-
-const MessageItem = (props) => {
-    return (
-        <div className={`message-item interlocutor ${props.otherUser ? "you" : "me"}`}>
-            <div className="user-img">
-                <img src={props.userAvatar} alt=""/>
-            </div>
-
-            <div className="text-box">
-                {props.messageText}
-            </div>
-        </div>
-    )
-}
+import DialogItem from "./DialogItem";
+import MessageItem from "./MessageItem";
 
 const Dialogs = (props) => {
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./UserNewPost.css";
 
-import userImg from "./../../img/user.jpg";
+import userImg from "../../../img/user.jpg";
 
 const UserNewPost = () => {
   return (

@@ -2,13 +2,13 @@ import React from "react";
 
 import "../Profile/Profile.css";
 
-import UserCard from "../../UserCard";
-import ProfileLeftSidebar from "../../ProfileLeftSidebar";
-import UserNewPost from "../../UserNewPost";
-import UserPost from "../../UserPosts";
-import ProfileRightSidebar from "../../ProfileRightSidebar";
-import userImg from "../../../img/user.jpg";
-import userImg2 from "../../../img/user-img-2.jpg";
+import UserCard from "./UserCard";
+import ProfileLeftSidebar from "./ProfileLeftSidebar";
+import UserNewPost from "./UserNewPost";
+import UserPost from "./UserPosts";
+import ProfileRightSidebar from "./ProfileRightSidebar";
+
+import userImg2 from "../../img/user-img-2.jpg";
 
 const Profile = () => {
 
