@@ -9,7 +9,7 @@ import Dialogs from "./components/Dialogs";
 import Settings from './components/Settings';
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
 
-function App() {
+function App(props) {
     return (
         <BrowserRouter>
             <div className="app grid">
@@ -20,9 +20,9 @@ function App() {
                     <Redirect to="/Profile"/>
                 )}/>
 
-                <Route path="/Profile" component={Profile}/>
+                <Route path="/Profile" render={ () => <Profile posts={props.posts} userStatsData={props.userStatsData} personalInfoData={props.personalInfoData} links={props.links} /> }/>
                 <Route path="/News" component={News}/>
-                <Route path="/Dialogs" component={Dialogs}/>
+                <Route path="/Dialogs" render={ () => <Dialogs dialogs={props.dialogs} messages={props.messages} />}/>
                 <Route path="/Settings" component={Settings}/>
             </div>
         </BrowserRouter>

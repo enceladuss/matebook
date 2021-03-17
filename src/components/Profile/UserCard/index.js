@@ -7,15 +7,9 @@ import userImg from "../../../img/user.jpg";
 
 import UserStatsItem from "./UserStatsItem";
 
-const UserCard = () => {
+const UserCard = (props) => {
 
-    const UserStatsData = [
-        {id: 1, statsHead: 'Posts', statsValue: '4'},
-        {id: 2, statsHead: 'Followers', statsValue: '33'},
-        {id: 3, statsHead: 'Following', statsValue: '12'}
-    ];
-
-    const UserStatsElements = UserStatsData.map(e => <UserStatsItem statsHead={e.statsHead} statsValue={e.statsValue} /> )
+    const UserStatsElements = props.data.map(e => <UserStatsItem statsHead={e.statsHead} statsValue={e.statsValue} /> )
 
     return (
         <div className="user_card">

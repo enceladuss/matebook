@@ -9,21 +9,9 @@ import MessageItem from "./MessageItem";
 
 const Dialogs = (props) => {
 
-    let dialogs = [
-        {id:'1', userAvatar:userImg, userName:'Andrew' },
-        {id:'2', userAvatar:userImg, userName:'Dimych' },
-        {id:'3', userAvatar:userImg, userName:'Anton' }
-    ]
+    let dialogsElements = props.dialogs.map( e => <DialogItem dialogId={e.id} userAvatar={e.userAvatar} userName={e.userName}/> )
 
-    let dialogsElements = dialogs.map( e => <DialogItem dialogId={e.id} userAvatar={e.userAvatar} userName={e.userName}/> )
-
-    let messages = [
-        {id:'1', userAvatar:userImg, messageText:'Lorem ipsum dolor sit amet', otherUser: true },
-        {id:'2', userAvatar:userImg, messageText:'Lorem ipsum dolor sit amet 228 consectetur adipisicing elit. Minus, odio.', otherUser: false },
-        {id:'3', userAvatar:userImg, messageText:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, odio.', otherUser: true }
-    ]
-
-    let messagesElements = messages.map( e => <MessageItem userAvatar={e.userAvatar} messageText={e.messageText} otherUser={e.otherUser}/> )
+    let messagesElements = props.messages.map( e => <MessageItem messageId={e.id} userAvatar={e.userAvatar} messageText={e.messageText} otherUser={e.otherUser}/> )
 
     return (
         <main className={`content dialogs-page`}>
