@@ -1,29 +1,30 @@
 import "./normalize.css";
-import "./App.css";
+import "./App.scss";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
+import NavigationFriends  from "./components/NavigationFriends";
 import Profile from "./components/Profile";
 import News from "./components/News";
 import Dialogs from "./components/Dialogs";
 import Settings from './components/Settings';
-import {BrowserRouter, Redirect, Route} from "react-router-dom";
+import {BrowserRouter, NavLink, Redirect, Route} from "react-router-dom";
 
 function App(props) {
     return (
         <BrowserRouter>
             <div className="app grid">
                 <Header/>
-                <Navigation/>
-
+                <Navigation state={props.state.navigation}/>
+                <NavigationFriends state={props.state.navigationFriends} />
                 <Route exact path="/" render={() => (
                     <Redirect to="/Profile"/>
                 )}/>
 
-                <Route path="/Profile" render={ () => <Profile posts={props.posts} userStatsData={props.userStatsData} personalInfoData={props.personalInfoData} links={props.links} /> }/>
-                <Route path="/News" component={News}/>
-                <Route path="/Dialogs" render={ () => <Dialogs dialogs={props.dialogs} messages={props.messages} />}/>
-                <Route path="/Settings" component={Settings}/>
+                <Route path="/Profile" render={ () => <Profile state={props.state.profilePage}/> }/>
+                <Route path="/News" render={ () => <News /> }/>
+                <Route path="/Dialogs" render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
+                <Route path="/Settings" render={ () => <Settings />}/>
             </div>
         </BrowserRouter>
     );

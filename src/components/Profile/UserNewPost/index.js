@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./UserNewPost.css";
+import "./UserNewPost.scss";
 
 import userImg from "../../../img/user.jpg";
 

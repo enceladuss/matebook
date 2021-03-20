@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./PersonalInfoItem.css";
+import "./PersonalInfoItem.scss";
 
 const PersonalInfoItem = (props) => {
     return (

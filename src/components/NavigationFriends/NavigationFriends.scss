@@ -1,0 +1,27 @@
+.nav-friends {
+  position: fixed;
+  top: 66px;
+  right: 0;
+  height: 100%;
+  max-width: 70px;
+  background-color: #fff;
+  z-index: 9;
+}
+
+.nav-friends .nav_links a .nav_links__icon {
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.nav-friends .nav_links a .nav_links__icon img {
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.nav-friends .nav_links a:last-child {
+  margin-top: 0;
+}

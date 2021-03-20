@@ -1,12 +1,12 @@
 import React from "react";
 
-import "./ProfileLeftSidebar.css";
+import "./ProfileLeftSidebar.scss";
 
 import PersonalInfoItem from "../PersonalInfoItem";
 
 const ProfileLeftSidebar = (props) => {
 
-    const personalInfoElements = props.data.map( (e) => <PersonalInfoItem itemIcon={e.itemIcon} itemHead={e.itemHead} itemText={e.itemText} /> )
+    const personalInfoElements = props.data.map( (e, index) => <PersonalInfoItem key={index} itemIcon={e.itemIcon} itemHead={e.itemHead} itemText={e.itemText} /> )
 
     return (
         <aside className="profile-content-sidebar profile-section filled-section">

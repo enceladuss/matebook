@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./DialogItem.css";
+import "./DialogItem.scss";
 
 import {NavLink} from "react-router-dom";
 

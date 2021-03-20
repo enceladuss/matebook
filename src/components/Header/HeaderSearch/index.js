@@ -2,7 +2,7 @@ import React from "react";
 
 import searchIcon from "../../../img/search.svg";
 
-import "./HeaderSearch.css";
+import "./HeaderSearch.scss";
 
 const HeaderSearch = () => {
   return (

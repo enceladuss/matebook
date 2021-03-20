@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Dialogs.css";
+import "./Dialogs.scss";
 
 import userImg from "./../../img/user.jpg";
 
@@ -9,9 +9,14 @@ import MessageItem from "./MessageItem";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogs.map( e => <DialogItem dialogId={e.id} userAvatar={e.userAvatar} userName={e.userName}/> )
+    let dialogsElements = props.state.dialogs.map((e, index) => <DialogItem key={index} dialogId={e.id}
+                                                                            userAvatar={e.userAvatar}
+                                                                            userName={e.userName}/>)
 
-    let messagesElements = props.messages.map( e => <MessageItem messageId={e.id} userAvatar={e.userAvatar} messageText={e.messageText} otherUser={e.otherUser}/> )
+    let messagesElements = props.state.messages.map((e, index) => <MessageItem key={index} messageId={e.id}
+                                                                               userAvatar={e.userAvatar}
+                                                                               messageText={e.messageText}
+                                                                               otherUser={e.otherUser}/>)
 
     return (
         <main className={`content dialogs-page`}>
@@ -24,7 +29,7 @@ const Dialogs = (props) => {
 
                     <div className="dialogs-list">
 
-                        { dialogsElements }
+                        {dialogsElements}
 
                     </div>
                 </div>
@@ -45,7 +50,7 @@ const Dialogs = (props) => {
 
                     <div className="message-area">
 
-                        { messagesElements }
+                        {messagesElements}
 
                     </div>
                 </div>

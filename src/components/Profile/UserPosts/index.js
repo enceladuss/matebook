@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./UserPosts.css";
+import "./UserPosts.scss";
 
 const UserPost = (props) => {
     return (

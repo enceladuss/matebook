@@ -4,7 +4,7 @@ import HeaderSearch from "./HeaderSearch";
 
 import logo from "./../../img/logo.png";
 
-import "./Header.css";
+import "./Header.scss";
 
 
 const Header = () => {

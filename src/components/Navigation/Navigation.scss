@@ -22,6 +22,11 @@
   font-weight: bold;
   color: #1da1f2;
   margin-bottom: 10px;
+
+  & a:last-child {
+    margin-top: 10px;
+  }
+
 }
 
 .nav_links a.active .nav_links__icon {
@@ -43,8 +48,4 @@
 .nav_links a img {
   width: 17px;
   height: auto;
-}
-
-.nav_links a:last-child {
-  margin-top: 10px;
 }

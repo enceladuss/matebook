@@ -2,7 +2,7 @@ import React from "react";
 
 import userImg from "../../../img/user.jpg";
 
-import "./HeaderLogin.css";
+import "./HeaderLogin.scss";
 
 const HeaderLogin = () => {
   return (

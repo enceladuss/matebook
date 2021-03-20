@@ -10,24 +10,26 @@ import ProfileRightSidebar from "./ProfileRightSidebar";
 
 const Profile = (props) => {
 
-    let postsElements = props.posts.map( e => <UserPost postAuthor={e.postAuthor} postAuthorAvatar={e.postAuthorAvatar} postText={e.postText}/> )
+    let postsElements = props.state.posts.map((e, index) => <UserPost key={index} postAuthor={e.postAuthor}
+                                                                      postAuthorAvatar={e.postAuthorAvatar}
+                                                                      postText={e.postText}/>)
 
     return (
         <main className={`content profile-page`}>
             <div className="content-wrapp">
-                <UserCard data={props.userStatsData} />
+                <UserCard data={props.state.userStatsData}/>
 
                 <div className="profile-content-wrapper">
-                    <ProfileLeftSidebar data={props.personalInfoData}/>
+                    <ProfileLeftSidebar data={props.state.personalInfoData}/>
 
                     <div className="profile-content-main profile-section">
                         <UserNewPost/>
 
-                        { postsElements }
+                        {postsElements}
 
                     </div>
 
-                    <ProfileRightSidebar data={props.links}/>
+                    <ProfileRightSidebar data={props.state.links}/>
                 </div>
             </div>
         </main>

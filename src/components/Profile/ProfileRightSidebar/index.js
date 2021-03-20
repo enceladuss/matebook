@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./ProfileRightSidebar.css";
+import "./ProfileRightSidebar.scss";
 
 const ProfileRightSidebar = (props) => {
 
-  const linksElements = props.data.map( e  => <li><a href={e.link}>{e.linkText}</a></li>)
+  const linksElements = props.data.map( (e, index)  => <li key={index}><a href={e.link}>{e.linkText}</a></li>)
 
   return (
       <aside className="profile-content-sidebar profile-content-right-sidebar profile-section">

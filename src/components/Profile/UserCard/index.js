@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./UserCard.css";
+import "./UserCard.scss";
 
 import profileImg from '../../../img/profile-image.jpg';
 import userImg from "../../../img/user.jpg";
@@ -9,7 +9,7 @@ import UserStatsItem from "./UserStatsItem";
 
 const UserCard = (props) => {
 
-    const UserStatsElements = props.data.map(e => <UserStatsItem statsHead={e.statsHead} statsValue={e.statsValue} /> )
+    const UserStatsElements = props.data.map((e, index) => <UserStatsItem key={index} statsHead={e.statsHead} statsValue={e.statsValue} /> )
 
     return (
         <div className="user_card">
