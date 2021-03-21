@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../Profile/Profile.css";
+import "./Profile.scss";
 
 import UserCard from "./UserCard";
 import ProfileLeftSidebar from "./ProfileLeftSidebar";

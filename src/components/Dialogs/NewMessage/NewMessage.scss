@@ -1,0 +1,61 @@
+.type-message-area {
+  width: 100%;
+  background: #fff;
+  border-top: 2px solid #bababa;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  textarea {
+    min-height: 42px;
+    max-height: 180px;
+  }
+}
+
+.sendMessageBtn {
+  width: 30px;
+  min-width: 30px;
+  height: 50px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 20px;
+    height: 20px;
+    path {
+      fill: #535165;
+      transition: 0.2s all;
+    }
+  }
+  &:hover {
+    svg path {
+      fill: #fa6342;
+    }
+  }
+}
+
+.textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  padding: 0 15px;
+  padding-top: 15px;
+  transition: 0.2s all;
+  &::placeholder {
+    transition: 0.2s all;
+  }
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+      padding-left: 30px;
+    }
+  }
+}
+
+.sendMessageBtn {
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+  }
+}

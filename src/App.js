@@ -3,7 +3,7 @@ import "./App.scss";
 
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
-import NavigationFriends  from "./components/NavigationFriends";
+import NavigationFriends from "./components/NavigationFriends";
 import Profile from "./components/Profile";
 import News from "./components/News";
 import Dialogs from "./components/Dialogs";
@@ -12,21 +12,20 @@ import {BrowserRouter, NavLink, Redirect, Route} from "react-router-dom";
 
 function App(props) {
     return (
-        <BrowserRouter>
-            <div className="app grid">
-                <Header/>
-                <Navigation state={props.state.navigation}/>
-                <NavigationFriends state={props.state.navigationFriends} />
-                <Route exact path="/" render={() => (
-                    <Redirect to="/Profile"/>
-                )}/>
+        <div className="app grid">
+            <Header/>
+            <Navigation state={props.state.navigation}/>
+            <NavigationFriends state={props.state.navigationFriends}/>
+            <Route exact path="/" render={() => (
+                <Redirect to="/Profile"/>
+            )}/>
 
-                <Route path="/Profile" render={ () => <Profile state={props.state.profilePage}/> }/>
-                <Route path="/News" render={ () => <News /> }/>
-                <Route path="/Dialogs" render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
-                <Route path="/Settings" render={ () => <Settings />}/>
-            </div>
-        </BrowserRouter>
+            <Route path="/Profile" render={() => <Profile state={props.state.profilePage}/>}/>
+            <Route path="/News" render={() => <News/>}/>
+            <Route path="/Dialogs" render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+            <Route path="/Settings" render={() => <Settings/>}/>
+        </div>
+
     );
 }
 

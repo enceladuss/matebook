@@ -3,9 +3,10 @@ import React from "react";
 import "./Dialogs.scss";
 
 import userImg from "./../../img/user.jpg";
-
 import DialogItem from "./DialogItem";
 import MessageItem from "./MessageItem";
+import NewMessage from "./NewMessage";
+
 
 const Dialogs = (props) => {
 
@@ -49,10 +50,11 @@ const Dialogs = (props) => {
                     </div>
 
                     <div className="message-area">
-
                         {messagesElements}
-
                     </div>
+
+                    <NewMessage/>
+
                 </div>
 
             </div>
