@@ -16,6 +16,7 @@ import sideFriend1 from "../img/side-friend1.jpg";
 import sideFriend2 from "../img/side-friend2.jpg";
 import sideFriend3 from "../img/side-friend3.jpg";
 import sideFriend4 from "../img/side-friend4.jpg";
+import {renderEntireTree} from "../render";
 
 let state = {
     navigation: [
@@ -97,6 +98,15 @@ let state = {
             }
         ]
     }
+};
+
+export let AddPost = (postMessage) => {
+    let newPost = {id: state.profilePage.posts.length + 1,
+        postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: postMessage
+    }
+    state.profilePage.posts.unshift(newPost);
+
+    renderEntireTree(state);
 };
 
 export default state;

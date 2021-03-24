@@ -10,6 +10,8 @@ import Dialogs from "./components/Dialogs";
 import Settings from './components/Settings';
 import {BrowserRouter, NavLink, Redirect, Route} from "react-router-dom";
 
+import {AddPost} from "./Redux/state";
+
 function App(props) {
     return (
         <div className="app grid">
@@ -20,12 +22,11 @@ function App(props) {
                 <Redirect to="/Profile"/>
             )}/>
 
-            <Route path="/Profile" render={() => <Profile state={props.state.profilePage}/>}/>
+            <Route path="/Profile" render={() => <Profile state={props.state.profilePage} addPost={AddPost}/>}/>
             <Route path="/News" render={() => <News/>}/>
             <Route path="/Dialogs" render={() => <Dialogs state={props.state.dialogsPage}/>}/>
             <Route path="/Settings" render={() => <Settings/>}/>
         </div>
-
     );
 }
 

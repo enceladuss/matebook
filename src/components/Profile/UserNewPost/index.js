@@ -4,12 +4,13 @@ import "./UserNewPost.scss";
 
 import userImg from "../../../img/user.jpg";
 
-const UserNewPost = () => {
+const UserNewPost = (props) => {
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        console.log(newPostElement.current.value);
+        props.addPost(newPostElement.current.value);
+        newPostElement.current.value = '';
     }
 
   return (
