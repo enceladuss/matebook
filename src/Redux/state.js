@@ -72,7 +72,9 @@ let state = {
             {id: 7, link: '#', linkText: 'Gifts'},
             {id: 8, link: '#', linkText: 'content policy'},
             {id: 9, link: '#', linkText: 'User Policy'},
-        ]
+        ],
+
+        newPostText: ''
     },
     dialogsPage: {
         dialogs: [
@@ -100,12 +102,18 @@ let state = {
     }
 };
 
-export let AddPost = (postMessage) => {
-    let newPost = {id: state.profilePage.posts.length + 1,
-        postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: postMessage
+export let AddPost = () => {
+    let newPost = {
+        id: state.profilePage.posts.length + 1,
+        postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: state.profilePage.newPostText
     }
     state.profilePage.posts.unshift(newPost);
+    state.profilePage.newPostText = '';
+    renderEntireTree(state);
+};
 
+export let updatePostText = (newText) => {
+    state.profilePage.newPostText = newText
     renderEntireTree(state);
 };
 

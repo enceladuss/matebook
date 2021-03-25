@@ -9,9 +9,14 @@ const UserNewPost = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.addPost(newPostElement.current.value);
-        newPostElement.current.value = '';
+        props.addPost();
     }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updatePostText(text);
+    }
+    // debugger;
 
   return (
     <div className="profile-sub-section user-new-post">
@@ -21,11 +26,7 @@ const UserNewPost = (props) => {
       <div className="newPostForm">
         <div className="postFormInput">
           <img src={userImg} alt="" />
-          <textarea
-            ref={newPostElement}
-            name="newPostText"
-            placeholder="Share some what you are thinking."
-          ></textarea>
+          <textarea ref={newPostElement} onChange={onPostChange} name="newPostText" placeholder="Share some what you are thinking." value={props.newPostText}/>
         </div>
         <button onClick={ addPost } className="btn buttonSubmit">
           Post
