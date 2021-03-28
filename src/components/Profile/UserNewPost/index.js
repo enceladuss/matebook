@@ -16,7 +16,6 @@ const UserNewPost = (props) => {
         let text = newPostElement.current.value;
         props.updatePostText(text);
     }
-    // debugger;
 
   return (
     <div className="profile-sub-section user-new-post">

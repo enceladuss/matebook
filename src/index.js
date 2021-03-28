@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import state, {AddPost, subscribe, updatePostText} from "./Redux/state";
+import store from "./Redux/state";
 import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
@@ -9,15 +9,15 @@ export let renderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state} addPost={AddPost} updatePostText={updatePostText} />
+                <App state={state} addPost={store.AddPost.bind(store)} updatePostText={store.updatePostText.bind(store)} />
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
     );
 };
 
-renderEntireTree(state);
+renderEntireTree(store._state);
 
-subscribe(renderEntireTree);
+store.subscribe(renderEntireTree);
 
 reportWebVitals();
