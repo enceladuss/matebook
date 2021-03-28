@@ -104,21 +104,22 @@ let store = {
         }
     },
     renderEntireTree(){},
-    AddPost(){
-        let newPost = {
-            id: this._state.profilePage.posts.length + 1,
-            postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: this._state.profilePage.newPostText
-        }
-        this._state.profilePage.posts.unshift(newPost);
-        this._state.profilePage.newPostText = '';
-        renderEntireTree(this._state);
-    },
-    updatePostText(newText){
-        this._state.profilePage.newPostText = newText
-        renderEntireTree(this._state);
-    },
     subscribe(observer){
         renderEntireTree = observer;
+    },
+    dispatch(action) {
+        if(action.type === 'ADD-POST') {
+            let newPost = {
+                id: this._state.profilePage.posts.length + 1,
+                postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: this._state.profilePage.newPostText
+            }
+            this._state.profilePage.posts.unshift(newPost);
+            this._state.profilePage.newPostText = '';
+            renderEntireTree(this._state);
+        } else if (action.type === 'UPDATE-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            renderEntireTree(this._state);
+        }
     }
 }
 

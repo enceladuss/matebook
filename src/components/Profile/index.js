@@ -24,7 +24,7 @@ const Profile = (props) => {
                     <ProfileLeftSidebar data={props.profilePage.personalInfoData}/>
 
                     <div className="profile-content-main profile-section">
-                        <UserNewPost addPost={props.addPost} newPostText={props.profilePage.newPostText} updatePostText={props.updatePostText}/>
+                        <UserNewPost dispatch={props.dispatch} newPostText={props.profilePage.newPostText}/>
 
                         {postsElements}
 
