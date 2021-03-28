@@ -16,7 +16,8 @@ import sideFriend1 from "../img/side-friend1.jpg";
 import sideFriend2 from "../img/side-friend2.jpg";
 import sideFriend3 from "../img/side-friend3.jpg";
 import sideFriend4 from "../img/side-friend4.jpg";
-import {renderEntireTree} from "../render";
+
+let renderEntireTree;
 
 let state = {
     navigation: [
@@ -116,5 +117,9 @@ export let updatePostText = (newText) => {
     state.profilePage.newPostText = newText
     renderEntireTree(state);
 };
+
+export const subscribe = (observer) => {
+    renderEntireTree = observer;
+}
 
 export default state;
