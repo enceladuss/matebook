@@ -3,18 +3,18 @@ import React from "react";
 import "./UserNewPost.scss";
 
 import userImg from "../../../img/user.jpg";
+import {addPostActionCreator, onPostChangeActionCreator} from "../../../Redux/state";
 
 const UserNewPost = (props) => {
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.dispatch({type: 'ADD-POST'})
+        props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = () => {
-        let newVar = {type: 'UPDATE-POST-TEXT', newText: newPostElement.current.value};
-        props.dispatch(newVar)
+        props.dispatch(onPostChangeActionCreator(newPostElement.current.value))
     }
 
     return (

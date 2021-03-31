@@ -11,10 +11,9 @@ import ProfileRightSidebar from "./ProfileRightSidebar";
 const Profile = (props) => {
 
     let postsElements = props.profilePage.posts.map((e, index) => <UserPost key={index} postAuthor={e.postAuthor}
-                                                                      postAuthorAvatar={e.postAuthorAvatar}
-                                                                      postText={e.postText}/>)
+                                                                            postAuthorAvatar={e.postAuthorAvatar}
+                                                                            postText={e.postText}/>)
 
-    // debugger
     return (
         <main className={`content profile-page`}>
             <div className="content-wrapp">

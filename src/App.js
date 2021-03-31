@@ -22,7 +22,7 @@ function App(props) {
 
             <Route path="/Profile" render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}/>
             <Route path="/News" render={() => <News/>}/>
-            <Route path="/Dialogs" render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+            <Route path="/Dialogs" render={() => <Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
             <Route path="/Settings" render={() => <Settings/>}/>
         </div>
     );
