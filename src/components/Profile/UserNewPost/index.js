@@ -3,7 +3,7 @@ import React from "react";
 import "./UserNewPost.scss";
 
 import userImg from "../../../img/user.jpg";
-import {addPostActionCreator, onPostChangeActionCreator} from "../../../Redux/state";
+import {addPostActionCreator, onPostChangeActionCreator} from "../../../Redux/profile-reducer";
 
 const UserNewPost = (props) => {
 

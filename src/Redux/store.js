@@ -17,12 +17,10 @@ import sideFriend2 from "../img/side-friend2.jpg";
 import sideFriend3 from "../img/side-friend3.jpg";
 import sideFriend4 from "../img/side-friend4.jpg";
 
-let renderEntireTree;
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
+let renderEntireTree;
 
 let store = {
     _state: {
@@ -106,8 +104,11 @@ let store = {
                     otherUser: true
                 }
             ],
-            newMessageText:  ''
+            newMessageText: ''
         }
+    },
+    getState() {
+        return this._state;
     },
     renderEntireTree() {
     },
@@ -115,47 +116,12 @@ let store = {
         renderEntireTree = observer;
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: this._state.profilePage.posts.length + 1,
-                postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: this._state.profilePage.newPostText
-            }
-            if(this._state.profilePage.newPostText.length >= 1) {
-                this._state.profilePage.posts.unshift(newPost);
-                this._state.profilePage.newPostText = '';
-                renderEntireTree(this._state);
-            }else {
-                console.log('message is empty')
-            }
-        } else if (action.type === UPDATE_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            renderEntireTree(this._state);
-        }
-        else if (action.type === SEND_MESSAGE) {
-            let newMessage = {
-                id: this._state.dialogsPage.messages.length + 1,
-                userAvatar: userImg,
-                messageText: this._state.dialogsPage.newMessageText,
-                otherUser: false
-            }
 
-            if(this._state.dialogsPage.newMessageText.length >= 1) {
-                this._state.dialogsPage.messages.push(newMessage);
-                this._state.dialogsPage.newMessageText = '';
-                renderEntireTree(this._state);
-            }else {
-                console.log('message is empty')
-            }
-        } else if (action.type === UPDATE_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.newText;
-            renderEntireTree(this._state);
-        }
+        this._state.profilePage =  profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage =  dialogsReducer(this._state.dialogsPage, action)
+
+        renderEntireTree(this._state);
     }
 }
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const onPostChangeActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text})
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
-export const onMessageChangeActionCreator = (text) => ({type: UPDATE_MESSAGE_TEXT, newText: text})
 
 export default store;

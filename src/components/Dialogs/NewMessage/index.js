@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./NewMessage.scss";
-import {onMessageChangeActionCreator, sendMessageActionCreator} from "../../../Redux/state";
+import {onMessageChangeActionCreator, sendMessageActionCreator} from "../../../Redux/dialogs-reducer";
 
 const NewMessage = (props) => {
 

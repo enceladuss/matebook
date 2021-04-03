@@ -6,7 +6,6 @@ import DialogSection from "./DialogsSection";
 import MessagesSection from "./MessagesSection";
 
 const Dialogs = (props) => {
-
     return (
         <main className={`content dialogs-page`}>
             <div className="content-wrapp">
