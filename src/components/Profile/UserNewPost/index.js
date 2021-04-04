@@ -3,18 +3,15 @@ import React from "react";
 import "./UserNewPost.scss";
 
 import userImg from "../../../img/user.jpg";
-import {addPostActionCreator, onPostChangeActionCreator} from "../../../Redux/profile-reducer";
 
 const UserNewPost = (props) => {
 
-    let newPostElement = React.createRef();
-
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
+    let onAddPost = () => {
+        props.addPost();
     }
 
-    let onPostChange = () => {
-        props.dispatch(onPostChangeActionCreator(newPostElement.current.value))
+    let onPostChange = (e) => {
+        props.updateNewPostText(e.target.value);
     }
 
     return (
@@ -25,10 +22,10 @@ const UserNewPost = (props) => {
             <div className="newPostForm">
                 <div className="postFormInput">
                     <img src={userImg} alt=""/>
-                    <textarea ref={newPostElement} onChange={onPostChange} name="newPostText"
+                    <textarea onChange={onPostChange} name="newPostText"
                               placeholder="Share some what you are thinking." value={props.newPostText}/>
                 </div>
-                <button onClick={addPost} className="btn buttonSubmit">
+                <button onClick={onAddPost} className="btn buttonSubmit">
                     Post
                 </button>
             </div>

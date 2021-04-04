@@ -20,9 +20,9 @@ function App(props) {
                 <Redirect to="/Profile"/>
             )}/>
 
-            <Route path="/Profile" render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}/>
+            <Route path="/Profile" render={() => <Profile store={props.store} />}/>
             <Route path="/News" render={() => <News/>}/>
-            <Route path="/Dialogs" render={() => <Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
+            <Route path="/Dialogs" render={() => <Dialogs store={props.store} dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
             <Route path="/Settings" render={() => <Settings/>}/>
         </div>
     );

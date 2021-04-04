@@ -2,8 +2,8 @@ import React from "react";
 
 import "./MessagesSection.scss";
 import userImg from "../../../img/user.jpg";
-import NewMessage from "../NewMessage";
 import MessageItem from "../MessageItem";
+import NewMessageContainer from "../NewMessage/NewMessageContainer";
 
 const MessagesSection = (props) => {
 
@@ -30,7 +30,7 @@ const MessagesSection = (props) => {
                 {messagesElements}
             </div>
 
-            <NewMessage newMessageText={props.newMessageText} dispatch={props.dispatch}/>
+            <NewMessageContainer store={props.store}/>
 
         </div>
     )

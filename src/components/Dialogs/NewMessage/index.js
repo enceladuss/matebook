@@ -1,16 +1,15 @@
 import React from "react";
 
 import "./NewMessage.scss";
-import {onMessageChangeActionCreator, sendMessageActionCreator} from "../../../Redux/dialogs-reducer";
 
 const NewMessage = (props) => {
 
     let sendMessage = () => {
-        props.dispatch(sendMessageActionCreator())
+        props.sendMessage();
     }
 
     let onMessageChange = (e) => {
-        props.dispatch(onMessageChangeActionCreator(e.target.value))
+        props.updateMessageText(e.target.value);
     }
 
     return (
