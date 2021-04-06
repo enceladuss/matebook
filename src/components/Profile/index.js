@@ -10,31 +10,29 @@ import UserNewPostContainer from "./UserNewPost/UserNewPostContainer";
 
 const Profile = (props) => {
 
-    let state = props.store.getState();
-
 
     // MOVE INTO SEPARATE COMPONENT
-    let postsElements = state.profilePage.posts.map((e, index) => <UserPost key={index} postAuthor={e.postAuthor}
+    let postsElements = props.state.profilePage.posts.map((e, index) => <UserPost key={index} postAuthor={e.postAuthor}
                                                                             postAuthorAvatar={e.postAuthorAvatar}
                                                                             postText={e.postText}/>)
 
     return (
         <main className={`content profile-page`}>
             <div className="content-wrapp">
-                <UserCard data={state.profilePage.userStatsData}/>
+                <UserCard data={props.state.profilePage.userStatsData}/>
 
                 <div className="profile-content-wrapper">
-                    <ProfileLeftSidebar data={state.profilePage.personalInfoData}/>
+                    <ProfileLeftSidebar data={props.state.profilePage.personalInfoData}/>
 
                     <div className="profile-content-main profile-section">
 
-                        <UserNewPostContainer store={props.store} />
+                        <UserNewPostContainer />
 
                         {postsElements}
 
                     </div>
 
-                    <ProfileRightSidebar data={state.profilePage.links}/>
+                    <ProfileRightSidebar data={props.state.profilePage.links}/>
                 </div>
             </div>
         </main>

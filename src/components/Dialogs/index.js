@@ -7,16 +7,14 @@ import MessagesSection from "./MessagesSection";
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState();
-
     return (
         <main className={`content dialogs-page`}>
             <div className="content-wrapp">
 
-                <DialogSection dialogs={state.dialogsPage.dialogs}/>
+                <DialogSection dialogs={props.state.dialogsPage.dialogs}/>
 
-                <MessagesSection store={props.store} newMessageText={state.dialogsPage.newMessageText} messages={state.dialogsPage.messages}
-                                 dispatch={state.dispatch}/>
+                <MessagesSection store={props.store} newMessageText={props.state.dialogsPage.newMessageText} messages={props.state.dialogsPage.messages}
+                                 dispatch={props.state.dispatch}/>
             </div>
         </main>
     );

@@ -16,7 +16,7 @@ const NewMessage = (props) => {
         <div className='type-message-area'>
             <textarea name="newMessage" placeholder="Write a message..."
                       className="textarea" onChange={onMessageChange} value={props.newMessageText}/>
-            <button className="btn sendMessageBtn" onClick={sendMessage}>
+            <button className="sendMessageBtn" onClick={sendMessage}>
                 <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="paper-plane"
                      className="svg-inline--fa fa-paper-plane fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 512 512">

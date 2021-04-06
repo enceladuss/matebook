@@ -30,7 +30,7 @@ const MessagesSection = (props) => {
                 {messagesElements}
             </div>
 
-            <NewMessageContainer store={props.store}/>
+            <NewMessageContainer />
 
         </div>
     )
