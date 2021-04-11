@@ -1,18 +1,15 @@
 import React from "react";
 import Navigation from "./index";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-const NavigationContainer = (props) => {
+let mapStateToProps = (state) => {
+    return {
+        state: state.navigation
+    }
+}
 
-    return (
-        <StoreContext.Consumer>
-            { store => {
-                let state = store.getState();
-                return <Navigation state={state.navigation}/>
-            }
-            }
-        </StoreContext.Consumer>
-    );
-};
+let mapDispatchToProps = () => {return}
+
+const NavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation)
 
 export default NavigationContainer;

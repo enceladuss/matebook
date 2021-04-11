@@ -9,7 +9,7 @@ import handShakeImg from "../img/icons/handshake.svg";
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
 
-let initialState = {
+const initialState = {
     posts: [
         {id: 1, postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: 'Hi, how are you?'},
         {
@@ -56,22 +56,28 @@ let initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
-    if (action.type === ADD_POST) {
-        let newPost = {
-            id: state.posts.length + 1,
-            postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: state.newPostText
-        }
-        if (state.newPostText.length >= 1) {
-            state.posts.unshift(newPost);
-            state.newPostText = '';
-        } else {
-            console.log('message is empty')
-        }
-    } else if (action.type === UPDATE_POST_TEXT) {
-        state.newPostText = action.newText;
+    switch (action.type) {
+        case ADD_POST:
+            let newPost = {
+                id: state.posts.length + 1,
+                postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: state.newPostText
+            }
+            if (state.newPostText.length >= 1) {
+                let stateCopy = {...state};
+                stateCopy.posts = [...state.posts];
+                stateCopy.posts.unshift(newPost);
+                stateCopy.newPostText = '';
+                return stateCopy;
+            } else {
+                console.log('message is empty')
+            }
+        case UPDATE_POST_TEXT:
+            let stateCopy = {...state}
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        default:
+            return state
     }
-
-    return state;
 };
 
 export const addPostActionCreator = () => ({type: ADD_POST})

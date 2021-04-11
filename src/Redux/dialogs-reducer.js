@@ -34,29 +34,35 @@ let initialState = {
 };
 
 const dialogsReducer = (state = initialState, action) => {
-    if (action.type === SEND_MESSAGE) {
-        let newMessage = {
-            id: state.messages.length + 1,
-            userAvatar: userImg,
-            messageText: state.newMessageText,
-            otherUser: false
-        }
+    switch (action.type) {
+        case SEND_MESSAGE:
+            let newMessage = {
+                id: state.messages.length + 1,
+                userAvatar: userImg,
+                messageText: state.newMessageText,
+                otherUser: false
+            }
 
-        if (state.newMessageText.length >= 1) {
-            state.messages.push(newMessage);
-            state.newMessageText = '';
-        } else {
-            console.log('message is empty')
-        }
-    } else if (action.type === UPDATE_MESSAGE_TEXT) {
-        state.newMessageText = action.newText;
+            if (state.newMessageText.length >= 1) {
+                let stateCopy = {...state};
+                stateCopy.messages = [...state.messages]
+                stateCopy.messages.push(newMessage);
+                stateCopy.newMessageText = '';
+                return stateCopy;
+            } else {
+                console.log('message is empty')
+            }
+        case UPDATE_MESSAGE_TEXT:
+            let stateCopy = {...state}
+            stateCopy.newMessageText = action.newText;
+            return stateCopy;
+        default:
+            return state;
     }
 
-    return state;
 };
+    export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+    export const onMessageChangeActionCreator = (text) => ({type: UPDATE_MESSAGE_TEXT, newText: text})
 
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
-export const onMessageChangeActionCreator = (text) => ({type: UPDATE_MESSAGE_TEXT, newText: text})
-
-export  default  dialogsReducer;
+    export default dialogsReducer;
 

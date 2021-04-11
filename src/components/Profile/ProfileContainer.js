@@ -1,18 +1,16 @@
 import React from "react";
-import StoreContext from "../../StoreContext";
 import Profile from "./index";
+import {connect} from "react-redux";
 
-const ProfileContainer = (props) => {
 
-    return (
-        <StoreContext.Consumer>
-            { store => {
-                let state = store.getState();
-                return <Profile state={state}/>
-            }
-            }
-        </StoreContext.Consumer>
-    );
-};
+let mapStateToProps = (state) => {
+    return {
+        state: state
+    }
+}
+
+let mapDispatchToProps = () => {return}
+
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
 
 export default ProfileContainer;

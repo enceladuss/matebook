@@ -1,19 +1,16 @@
 import React from "react";
 
-import StoreContext from "../../StoreContext";
 import NavigationFriends from "./index";
+import {connect} from "react-redux";
 
-const NavigationFriendsContainer = (props) => {
+let mapStateToProps = (state) => {
+    return {
+        state: state.navigationFriends
+    }
+}
 
-    return (
-        <StoreContext.Consumer>
-            { store => {
-                let state = store.getState();
-                return <NavigationFriends state={state.navigationFriends}/>
-            }
-            }
-        </StoreContext.Consumer>
-    );
-};
+let mapDispatchToProps = () => {return}
+
+const NavigationFriendsContainer = connect(mapStateToProps, mapDispatchToProps)(NavigationFriends)
 
 export default NavigationFriendsContainer;
