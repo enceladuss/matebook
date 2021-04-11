@@ -8,8 +8,7 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = () => {return}
 
-const NavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation)
+const NavigationContainer = connect(mapStateToProps)(Navigation)
 
 export default NavigationContainer;

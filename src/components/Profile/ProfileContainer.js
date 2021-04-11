@@ -9,8 +9,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = () => {return}
-
-const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
+const ProfileContainer = connect(mapStateToProps)(Profile)
 
 export default ProfileContainer;

@@ -42,27 +42,24 @@ const dialogsReducer = (state = initialState, action) => {
                 messageText: state.newMessageText,
                 otherUser: false
             }
-
             if (state.newMessageText.length >= 1) {
-                let stateCopy = {...state};
-                stateCopy.messages = [...state.messages]
-                stateCopy.messages.push(newMessage);
-                stateCopy.newMessageText = '';
-                return stateCopy;
+                return {
+                    ...state,
+                    messages: [...state.messages, newMessage],
+                    newMessageText: ''
+                };
             } else {
                 console.log('message is empty')
             }
         case UPDATE_MESSAGE_TEXT:
-            let stateCopy = {...state}
-            stateCopy.newMessageText = action.newText;
-            return stateCopy;
+            return {...state, newMessageText: action.newText}
         default:
             return state;
     }
 
 };
-    export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
-    export const onMessageChangeActionCreator = (text) => ({type: UPDATE_MESSAGE_TEXT, newText: text})
+export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+export const onMessageChangeActionCreator = (text) => ({type: UPDATE_MESSAGE_TEXT, newText: text})
 
-    export default dialogsReducer;
+export default dialogsReducer;
 

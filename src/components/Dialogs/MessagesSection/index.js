@@ -7,7 +7,7 @@ import NewMessageContainer from "../NewMessage/NewMessageContainer";
 
 const MessagesSection = (props) => {
 
-    let messagesElements = props.messages.map((e, index) => <MessageItem key={index} messageId={e.id}
+    let messagesElements = props.messages.map((e) => <MessageItem key={e.id} messageId={e.id}
                                                                                      userAvatar={e.userAvatar}
                                                                                      messageText={e.messageText}
                                                                                      otherUser={e.otherUser}/>)

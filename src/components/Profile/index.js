@@ -12,7 +12,7 @@ const Profile = (props) => {
 
 
     // MOVE INTO SEPARATE COMPONENT
-    let postsElements = props.state.profilePage.posts.map((e, index) => <UserPost key={index} postAuthor={e.postAuthor}
+    let postsElements = props.state.profilePage.posts.map((e) => <UserPost key={e.id} postAuthor={e.postAuthor}
                                                                             postAuthorAvatar={e.postAuthorAvatar}
                                                                             postText={e.postText}/>)
 

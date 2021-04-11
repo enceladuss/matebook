@@ -63,18 +63,16 @@ const profileReducer = (state = initialState, action) => {
                 postAuthor: 'Jason Borne', postAuthorAvatar: userImg2, postText: state.newPostText
             }
             if (state.newPostText.length >= 1) {
-                let stateCopy = {...state};
-                stateCopy.posts = [...state.posts];
-                stateCopy.posts.unshift(newPost);
-                stateCopy.newPostText = '';
-                return stateCopy;
+                return {
+                    ...state,
+                    posts: [newPost, ...state.posts],
+                    newPostText: ''
+                };
             } else {
                 console.log('message is empty')
             }
         case UPDATE_POST_TEXT:
-            let stateCopy = {...state}
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
+            return  {...state, newPostText: action.newText}
         default:
             return state
     }
